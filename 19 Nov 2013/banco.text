@@ -1,0 +1,36 @@
+-- Banco de Dados: projeto
+
+CREATE TABLE  categorias (
+  codigo int(11) NOT NULL AUTO_INCREMENT,
+  categoria varchar(15) DEFAULT NULL,
+  PRIMARY KEY (codigo)
+);
+
+
+INSERT INTO categorias (codigo, categoria) VALUES
+(1, 'CAMINHOES'),
+(2, 'BONECAS'),
+(3, 'HELICOPTEROS'),
+(4, 'PRAIA');
+
+-- Estrutura da tabela produtos
+
+CREATE TABLE produtos (
+  codigo int(11) NOT NULL AUTO_INCREMENT,
+  categoria int(11) DEFAULT NULL,
+  estoque int(5) DEFAULT NULL,
+  nome varchar(20) DEFAULT NULL,
+  precoVenda float(6,2) DEFAULT NULL,
+  fotoPrincipal varchar(50) DEFAULT NULL,
+  fotoSite varchar(50) DEFAULT NULL,
+  descricao text,
+  PRIMARY KEY (codigo)
+);
+
+-- Extraindo dados da tabela produtos
+--
+
+INSERT INTO produtos (codigo, categoria, estoque, nome, precoVenda, fotoPrincipal, fotoSite, descricao) VALUES
+(1, 1, 50, 'ÉKTRUS ELETRONIC CAM', 70.00, 'img03Grande.jpg', 'img03.jpg', 'Caminhao guincho bem legal'),
+(2, 4, 20, 'BALDÃO (BALDE DE PRA', 50.00, 'img04Grande.jpg', 'img04.jpg', 'Balde de Praia');
+
